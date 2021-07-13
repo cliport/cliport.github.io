@@ -17,6 +17,9 @@ body {
   font-variant: small-caps;
 }
 
+.dcliport {
+  font-variant: small-caps;
+}
 
 .teaser .hero-body {
   padding-top: 0;
@@ -27,6 +30,13 @@ body {
   font-family: 'Google Sans', sans-serif;
 }
 
+.teaser video {
+  object-fit: fill;
+  
+}
+#glass{
+  margin-left: -10px;
+}
 
 .publication-title {
 }
@@ -71,7 +81,7 @@ body {
 }
 
 .publication-authors a {
-   color: hsl(204, 86%, 53%) !important;
+   color: hsl(121, 100%, 36%) !important;
 }
 
 .publication-authors a:hover {
