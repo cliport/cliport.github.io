@@ -54,7 +54,7 @@
   </div>
   <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://mohitshridhar.com">
+      <a class="navbar-item" target="_blank" href="https://mohitshridhar.com">
       <span class="icon">
           <i class="fas fa-home"></i>
       </span>
@@ -90,11 +90,11 @@
           <h1 class="title is-1 publication-title">CLIPort: What and Where Pathways for Robotic Manipulation</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://mohitshridhar.com/">Mohit Shridhar</a><sup>1</sup>,</span>
+              <a target="_blank" href="https://mohitshridhar.com/">Mohit Shridhar</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="http://lucasmanuelli.com/">Lucas Manuelli</a><sup>2</sup>,</span>
+              <a target="_blank" href="http://lucasmanuelli.com/">Lucas Manuelli</a><sup>2</sup>,</span>
             <span class="author-block">
-              <a href="https://homes.cs.washington.edu/~fox/">Dieter Fox</a><sup>1, 2</sup>
+              <a target="_blank" href="https://homes.cs.washington.edu/~fox/">Dieter Fox</a><sup>1, 2</sup>
             </span>
           </div>
 
@@ -161,7 +161,8 @@
                 type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
-        <span class="dcliport">CLIPort</span> is an end-to-end framework that can learn one multi-task language-conditioned policy for various tabletop manipulation tasks.
+      </br>
+        <span class="dcliport">CLIPort</span> is an end-to-end imitation-learning agent that can learn one multi-task language-conditioned policy for various tabletop tasks.
       </h2>
     </div>
   </div>
@@ -190,6 +191,12 @@
                     type="video/mp4">
           </video>
         </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop height="100%">
+            <source src="https://homes.cs.washington.edu/~mshr/cliport/videos/6_sweeping.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
         <div class="item item-chair-tp">
           <video poster="" id="chair-tp" autoplay controls muted loop height="100%">
             <source src="https://homes.cs.washington.edu/~mshr/cliport/videos/2_bowl.mp4"
@@ -202,17 +209,14 @@
                     type="video/mp4">
           </video>
         </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop height="100%">
-            <source src="https://homes.cs.washington.edu/~mshr/cliport/videos/6_sweeping.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
       </div>
     </div>
   </div>
 </section>
-
+<h2 class="subtitle has-text-centered">
+</br>
+  We learn one multi-task policy for 6 real-world tasks including folding, packing, sweeping etc. with just 115 training examples.
+</h2>
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -313,7 +317,7 @@
                  controls
                  muted
                  autoplay
-                 preload
+                 loop
                  width="50%">
             <source src="https://transporternets.github.io/images/animation.mp4"
                     type="video/mp4">
@@ -330,7 +334,7 @@
         <h3 class="title is-4">Affordance Predictions</h3>
         <div class="content has-text-justified">
           <p>
-            Some examples of pick and place affordance predictions from a multi-task <span class="dcliport">CLIPort</span> model:
+            Examples of pick and place affordance predictions from a multi-task <span class="dcliport">CLIPort</span> model:
           </p>
         </div>
         <br/>

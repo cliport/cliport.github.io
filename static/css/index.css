@@ -165,3 +165,13 @@ body {
 #interpolation-image-wrapper img {
   border-radius: 5px;
 }
+
+#interpolation-image img {
+    padding: 0;
+    display: block;
+    margin: 0 auto;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+
