@@ -21,9 +21,51 @@
 
     gtag('config', 'G-PYVRSFMDRL');
 
+    function updateSingleVideo() {
+      var demo = document.getElementById("single-menu-demos").value;
+      var task = document.getElementById("single-menu-tasks").value;
+      var inst = document.getElementById("single-menu-instances").value;
 
+      console.log("single", demo, task, inst)
+
+      var video = document.getElementById("single-task-result-video");
+      video.src = "https://homes.cs.washington.edu/~mshr/cliport/results_web/" + 
+                  task + 
+                  "-two_stream_full_clip_lingunet_lat_transporter-n" + 
+                  demo + 
+                  "-train/videos/" + 
+                  task +
+                  "-0000" + 
+                  inst + 
+                  ".mp4";
+      video.playbackRate = 2.0;
+      video.play();
+    }
+
+    function updateMultiVideo() {
+      var demo = document.getElementById("multi-menu-demos").value;
+      var task = document.getElementById("multi-menu-tasks").value;
+      var inst = document.getElementById("multi-menu-instances").value;
+
+      console.log("multi", demo, task, inst)
+
+      var video = document.getElementById("multi-task-result-video");
+      video.src = "https://homes.cs.washington.edu/~mshr/cliport/results_web/" + 
+                  task + 
+                  "-two_stream_full_clip_lingunet_lat_transporter-n" + 
+                  demo + 
+                  "-train/videos/multi-language-conditioned-" + 
+                  task +
+                  "-0000" + 
+                  inst + 
+                  ".mp4";
+      video.playbackRate = 2.0;
+      video.play();
+    }
 
   </script>
+
+
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -279,12 +321,12 @@
 <section class="section">
   <div class="container is-max-widescreen">
 
-    <div class="columns is-four-fifths">
+    <div class="rows">
 
 
     <!-- Animation. -->
-    <div class="columns is-centered ">
-      <div class="column is-full-width">
+    <div class="rows is-centered ">
+      <div class="row is-full-width">
         <h2 class="title is-3"><span class="dcliport">CLIPort</span></h2>
 
         <!-- Interpolating. -->
@@ -317,7 +359,7 @@
           </p>
         </div>
         <div class="content has-text-centered">
-          <video id="replay-video"
+          <video id="transporter-gif"
                  controls
                  muted
                  autoplay
@@ -336,7 +378,127 @@
 
         <h2 class="title is-3">Results</h2>
 
-        <!-- Re-rendering. -->
+        <div class="columns">
+          <div class="column has-text-centered">
+            <h3 class="title is-5">Single-Task Models</h3>
+
+            Trained with
+            <div class="select is-small">
+              <select id="single-menu-demos" onchange="updateSingleVideo()">
+              <option value="1">1</option>
+              <option value="10">10</option>
+              <option value="100" selected="selected">100</option>
+              <option value="1000">1000</option>
+              </select>
+            </div>
+            demos, evaluated on 
+            <div class="select is-small">     
+              <select id="single-menu-tasks" onchange="updateSingleVideo()">
+              <option value="align-rope">align-rope</option>
+              <option value="assembling-kits-seq-seen-colors">assembling-kits-seq-seen-colors</option>
+              <option value="assembling-kits-seq-unseen-colors">assembling-kits-seq-unseen-colors</option>
+              <option value="packing-boxes-pairs-seen-colors" selected="selected">packing-boxes-pairs-seen-colors</option>
+              <option value="packing-boxes-pairs-unseen-colors">packing-boxes-pairs-unseen-colors</option>
+              <option value="packing-seen-google-objects-seq">packing-seen-google-objects-seq</option>
+              <option value="packing-unseen-google-objects-seq">packing-unseen-google-objects-seq</option>
+              <option value="packing-seen-google-objects-group">packing-seen-google-objects-group</option>
+              <option value="packing-unseen-google-objects-group">packing-unseen-google-objects-group</option>
+              <option value="packing-shapes">packing-shapes</option>
+              <option value="put-block-in-bowl-seen-colors">put-block-in-bowl-seen-colors</option>
+              <option value="put-block-in-bowl-unseen-colors">put-block-in-bowl-unseen-colors</option>
+              <option value="separating-piles-seen-colors">separating-piles-seen-colors</option>
+              <option value="separating-piles-unseen-colors">separating-piles-unseen-colors</option>
+              <option value="stack-block-pyramid-seq-seen-colors">stack-block-pyramid-seq-seen-colors</option>
+              <option value="stack-block-pyramid-seq-unseen-colors">stack-block-pyramid-seq-unseen-colors</option>
+              <option value="towers-of-hanoi-seq-seen-colors">towers-of-hanoi-seq-seen-colors</option>
+              <option value="towers-of-hanoi-seq-unseen-colors">towers-of-hanoi-seq-unseen-colors</option>
+              </select>
+            </div>
+            instance
+            <div class="select is-small">
+              <select id="single-menu-instances" onchange="updateSingleVideo()">
+              <option value="01" selected="selected">01</option>
+              <option value="02">02</option>
+              <option value="03">03</option>
+              <option value="04">04</option>
+              <option value="05">05</option>
+              </select>
+            </div>
+            <br/>
+            <br/>
+
+            <video id="single-task-result-video"
+                   controls
+                   muted
+                   autoplay
+                   loop
+                   width="100%">
+              <source src="https://transporternets.github.io/images/animation.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+
+          <div class="column has-text-centered">
+            <h3 class="title is-5">One Multi-Task Model</h3>
+            
+            Trained with
+            <div class="select is-small">
+              <select id="multi-menu-demos" onchange="updateMultiVideo()">
+              <option value="1">1 T</option>
+              <option value="10">10 T</option>
+              <option value="100" selected="selected">100 T</option>
+              <option value="1000">1000 T</option>
+              </select>
+            </div>
+            demos, evaluated on  
+            <div class="select is-small">   
+              <select id="multi-menu-tasks" onchange="updateMultiVideo()">
+              <option value="align-rope">align-rope</option>
+              <option value="assembling-kits-seq-seen-colors">assembling-kits-seq-seen-colors</option>
+              <option value="assembling-kits-seq-unseen-colors">assembling-kits-seq-unseen-colors</option>
+              <option value="packing-boxes-pairs-seen-colors">packing-boxes-pairs-seen-colors</option>
+              <option value="packing-boxes-pairs-unseen-colors">packing-boxes-pairs-unseen-colors</option>
+              <option value="packing-seen-google-objects-seq">packing-seen-google-objects-seq</option>
+              <option value="packing-unseen-google-objects-seq">packing-unseen-google-objects-seq</option>
+              <option value="packing-seen-google-objects-group">packing-seen-google-objects-group</option>
+              <option value="packing-unseen-google-objects-group" selected="selected">packing-unseen-google-objects-group</option>
+              <option value="packing-shapes">packing-shapes</option>
+              <option value="put-block-in-bowl-seen-colors">put-block-in-bowl-seen-colors</option>
+              <option value="put-block-in-bowl-unseen-colors">put-block-in-bowl-unseen-colors</option>
+              <option value="separating-piles-seen-colors">separating-piles-seen-colors</option>
+              <option value="separating-piles-unseen-colors">separating-piles-unseen-colors</option>
+              <option value="stack-block-pyramid-seq-seen-colors">stack-block-pyramid-seq-seen-colors</option>
+              <option value="stack-block-pyramid-seq-unseen-colors">stack-block-pyramid-seq-unseen-colors</option>
+              <option value="towers-of-hanoi-seq-seen-colors">towers-of-hanoi-seq-seen-colors</option>
+              <option value="towers-of-hanoi-seq-unseen-colors">towers-of-hanoi-seq-unseen-colors</option>
+              </select>
+            </div>
+            instance
+            <div class="select is-small">
+              <select id="multi-menu-instances" onchange="updateMultiVideo()">
+              <option value="01" selected="selected">01</option>
+              <option value="02">02</option>
+              <option value="03">03</option>
+              <option value="04">04</option>
+              <option value="05">05</option>
+              </select>
+            </div>
+            </br>
+            </br>
+
+            <video id="multi-task-result-video"
+                   controls
+                   muted
+                   autoplay
+                   loop
+                   width="100%">
+              <source src="https://transporternets.github.io/images/animation.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+        </div>
+        </br>
+
         <h3 class="title is-4">Affordance Predictions</h3>
         <div class="content has-text-justified">
           <p>
@@ -380,10 +542,10 @@
       </a>
     </div>
     <div class="columns is-centered">
-      <div class="column is-8">
+      <div class="column is-6">
         <div class="content">
           <p>
-            Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NERFies</a> made by the amazing <a href="https://keunhong.com/">Keunhong Park</a>. 
+            Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io">NeRFies</a> made by the amazing <a href="https://keunhong.com/">Keunhong Park</a>. 
           </p>
         </div>
       </div>

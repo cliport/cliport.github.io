@@ -175,4 +175,6 @@ body {
     max-width: 100%;
 }
 
-
+ .dropdown-item{
+    white-space: pre-wrap;
+}  
