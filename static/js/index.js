@@ -67,5 +67,8 @@ $(document).ready(function() {
     $('#interpolation-slider').prop('max', NUM_INTERP_FRAMES - 1);
 
     bulmaSlider.attach();
+
+    document.getElementById("single-task-result-video").playbackRate = 2.0;
+    document.getElementById("multi-task-result-video").playbackRate = 2.0;
 })
 

@@ -387,13 +387,72 @@
               <select id="single-menu-demos" onchange="updateSingleVideo()">
               <option value="1">1</option>
               <option value="10">10</option>
-              <option value="100" selected="selected">100</option>
-              <option value="1000">1000</option>
+              <option value="100">100</option>
+              <option value="1000" selected="selected">1000</option>
               </select>
             </div>
             demos, evaluated on 
             <div class="select is-small">     
               <select id="single-menu-tasks" onchange="updateSingleVideo()">
+              <option value="align-rope">align-rope</option>
+              <option value="assembling-kits-seq-seen-colors">assembling-kits-seq-seen-colors</option>
+              <option value="assembling-kits-seq-unseen-colors">assembling-kits-seq-unseen-colors</option>
+              <option value="packing-boxes-pairs-seen-colors">packing-boxes-pairs-seen-colors</option>
+              <option value="packing-boxes-pairs-unseen-colors">packing-boxes-pairs-unseen-colors</option>
+              <option value="packing-seen-google-objects-seq" selected="selected">packing-seen-google-objects-seq</option>
+              <option value="packing-unseen-google-objects-seq">packing-unseen-google-objects-seq</option>
+              <option value="packing-seen-google-objects-group">packing-seen-google-objects-group</option>
+              <option value="packing-unseen-google-objects-group">packing-unseen-google-objects-group</option>
+              <option value="packing-shapes">packing-shapes</option>
+              <option value="put-block-in-bowl-seen-colors">put-block-in-bowl-seen-colors</option>
+              <option value="put-block-in-bowl-unseen-colors">put-block-in-bowl-unseen-colors</option>
+              <option value="separating-piles-seen-colors">separating-piles-seen-colors</option>
+              <option value="separating-piles-unseen-colors">separating-piles-unseen-colors</option>
+              <option value="stack-block-pyramid-seq-seen-colors">stack-block-pyramid-seq-seen-colors</option>
+              <option value="stack-block-pyramid-seq-unseen-colors">stack-block-pyramid-seq-unseen-colors</option>
+              <option value="towers-of-hanoi-seq-seen-colors">towers-of-hanoi-seq-seen-colors</option>
+              <option value="towers-of-hanoi-seq-unseen-colors">towers-of-hanoi-seq-unseen-colors</option>
+              </select>
+            </div>
+            instance
+            <div class="select is-small">
+              <select id="single-menu-instances" onchange="updateSingleVideo()">
+              <option value="01">01</option>
+              <option value="02">02</option>
+              <option value="03">03</option>
+              <option value="04" selected="selected">04</option>
+              <option value="05">05</option>
+              </select>
+            </div>
+            <br/>
+            <br/>
+
+            <video id="single-task-result-video"
+                   controls
+                   muted
+                   autoplay
+                   loop
+                   width="100%">
+              <source src="https://homes.cs.washington.edu/~mshr/cliport/results_web/packing-seen-google-objects-seq-two_stream_full_clip_lingunet_lat_transporter-n1000-train/videos/packing-seen-google-objects-seq-000004.mp4"
+                      type="video/mp4">
+            </video>
+          </div>
+
+          <div class="column has-text-centered">
+            <h3 class="title is-5">One Multi-Task Model</h3>
+            
+            Trained with
+            <div class="select is-small">
+              <select id="multi-menu-demos" onchange="updateMultiVideo()">
+              <option value="1">1 T</option>
+              <option value="10">10 T</option>
+              <option value="100">100 T</option>
+              <option value="1000" selected="selected">1000 T</option>
+              </select>
+            </div>
+            demos, evaluated on  
+            <div class="select is-small">   
+              <select id="multi-menu-tasks" onchange="updateMultiVideo()">
               <option value="align-rope">align-rope</option>
               <option value="assembling-kits-seq-seen-colors">assembling-kits-seq-seen-colors</option>
               <option value="assembling-kits-seq-unseen-colors">assembling-kits-seq-unseen-colors</option>
@@ -416,70 +475,11 @@
             </div>
             instance
             <div class="select is-small">
-              <select id="single-menu-instances" onchange="updateSingleVideo()">
-              <option value="01" selected="selected">01</option>
-              <option value="02">02</option>
-              <option value="03">03</option>
-              <option value="04">04</option>
-              <option value="05">05</option>
-              </select>
-            </div>
-            <br/>
-            <br/>
-
-            <video id="single-task-result-video"
-                   controls
-                   muted
-                   autoplay
-                   loop
-                   width="100%">
-              <source src="https://transporternets.github.io/images/animation.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-
-          <div class="column has-text-centered">
-            <h3 class="title is-5">One Multi-Task Model</h3>
-            
-            Trained with
-            <div class="select is-small">
-              <select id="multi-menu-demos" onchange="updateMultiVideo()">
-              <option value="1">1 T</option>
-              <option value="10">10 T</option>
-              <option value="100" selected="selected">100 T</option>
-              <option value="1000">1000 T</option>
-              </select>
-            </div>
-            demos, evaluated on  
-            <div class="select is-small">   
-              <select id="multi-menu-tasks" onchange="updateMultiVideo()">
-              <option value="align-rope">align-rope</option>
-              <option value="assembling-kits-seq-seen-colors">assembling-kits-seq-seen-colors</option>
-              <option value="assembling-kits-seq-unseen-colors">assembling-kits-seq-unseen-colors</option>
-              <option value="packing-boxes-pairs-seen-colors">packing-boxes-pairs-seen-colors</option>
-              <option value="packing-boxes-pairs-unseen-colors">packing-boxes-pairs-unseen-colors</option>
-              <option value="packing-seen-google-objects-seq">packing-seen-google-objects-seq</option>
-              <option value="packing-unseen-google-objects-seq">packing-unseen-google-objects-seq</option>
-              <option value="packing-seen-google-objects-group">packing-seen-google-objects-group</option>
-              <option value="packing-unseen-google-objects-group" selected="selected">packing-unseen-google-objects-group</option>
-              <option value="packing-shapes">packing-shapes</option>
-              <option value="put-block-in-bowl-seen-colors">put-block-in-bowl-seen-colors</option>
-              <option value="put-block-in-bowl-unseen-colors">put-block-in-bowl-unseen-colors</option>
-              <option value="separating-piles-seen-colors">separating-piles-seen-colors</option>
-              <option value="separating-piles-unseen-colors">separating-piles-unseen-colors</option>
-              <option value="stack-block-pyramid-seq-seen-colors">stack-block-pyramid-seq-seen-colors</option>
-              <option value="stack-block-pyramid-seq-unseen-colors">stack-block-pyramid-seq-unseen-colors</option>
-              <option value="towers-of-hanoi-seq-seen-colors">towers-of-hanoi-seq-seen-colors</option>
-              <option value="towers-of-hanoi-seq-unseen-colors">towers-of-hanoi-seq-unseen-colors</option>
-              </select>
-            </div>
-            instance
-            <div class="select is-small">
               <select id="multi-menu-instances" onchange="updateMultiVideo()">
-              <option value="01" selected="selected">01</option>
+              <option value="01">01</option>
               <option value="02">02</option>
               <option value="03">03</option>
-              <option value="04">04</option>
+              <option value="04" selected="selected">04</option>
               <option value="05">05</option>
               </select>
             </div>
@@ -492,7 +492,7 @@
                    autoplay
                    loop
                    width="100%">
-              <source src="https://transporternets.github.io/images/animation.mp4"
+              <source src="https://homes.cs.washington.edu/~mshr/cliport/results_web/packing-boxes-pairs-seen-colors-two_stream_full_clip_lingunet_lat_transporter-n1000-train/videos/multi-language-conditioned-packing-boxes-pairs-seen-colors-000004.mp4"
                       type="video/mp4">
             </video>
           </div>
