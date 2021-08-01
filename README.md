@@ -1,8 +1,8 @@
 # CLIPort
 
-This is the repository that contains source code for the [Nerfies website](https://cliport.github.io).
+This is the repository that contains source code for the [CLIPort website](https://cliport.github.io).
 
-If you find Nerfies useful for your work please cite:
+If you find CLIPort useful for your work please cite:
 ```
 @article{shridhar2021cliport
   author    = {Shridhar, Mohit and Manuelli, Lucas and Fox, Dieter},
