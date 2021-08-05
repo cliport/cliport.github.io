@@ -231,6 +231,12 @@
                     type="video/mp4">
           </video>
         </div>
+        <div class="item item-shiba">
+          <video poster="" id="shiba" autoplay controls muted loop height="100%">
+            <source src="https://homes.cs.washington.edu/~mshr/cliport/videos/7_reading.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
         <div class="item item-blueshirt">
           <video poster="" id="blueshirt" autoplay controls muted loop height="100%">
             <source src="https://homes.cs.washington.edu/~mshr/cliport/videos/6_sweeping.mp4"
@@ -240,6 +246,12 @@
         <div class="item item-chair-tp">
           <video poster="" id="chair-tp" autoplay controls muted loop height="100%">
             <source src="https://homes.cs.washington.edu/~mshr/cliport/videos/2_bowl.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-blueshirt">
+          <video poster="" id="blueshirt" autoplay controls muted loop height="100%">
+            <source src="https://homes.cs.washington.edu/~mshr/cliport/videos/8_rope.mp4"
                     type="video/mp4">
           </video>
         </div>
@@ -255,7 +267,7 @@
 </section>
 <h2 class="subtitle has-text-centered">
 </br>
-  We learn one multi-task policy for 6 real-world tasks including folding, packing, sweeping etc. with just 115 training examples.
+  We learn one multi-task policy for 8 real-world tasks including folding, packing, sweeping etc. with just 142 training examples.
 </h2>
 
 <section class="section">
@@ -333,9 +345,9 @@
           <p>
             Broadly inspired by (or vaguely analogous to) the <a target=”_blank” href="https://en.wikipedia.org/wiki/Two-streams_hypothesis">two-stream hypothesis in biology</a>, we present a two-stream architecture 
             for vision-based manipulation with semantic and spatial pathways. The semantic stream uses a pre-trained CLIP  
-            to encode RGB and language-goal input. Since CLIP is trained on large amounts of image-caption pairs from the internet,
-            it acts as a powerful semantic prior for grounding visual concepts like colors, shapes, parts, and object categories. 
-            The spatial stream is a tabula rasa fully-convolutional network that encodes RGB-D input. 
+            to encode RGB and language-goal input. Since CLIP is trained with large amounts of image-caption pairs from the internet,
+            it acts as a powerful semantic prior for <a target="_blank" href="https://distill.pub/2021/multimodal-neurons/">grounding visual concepts</a> like colors, shapes, parts, texts, and object categories. 
+            The spatial stream is a tabula rasa fully-convolutional network that encodes RGB-D input to incorporate additional spatial information from depth data. 
           </p>
         </div>
         <img src="https://homes.cs.washington.edu/~mshr/cliport/images/two_stream_architecture.png" class="interpolation-image" 
@@ -352,7 +364,7 @@
             We use this two-stream architecture in all three networks of <a target=”_blank” href="https://transporternets.github.io/">TransporterNets</a> 
             to predict pick and place affordances at each timestep. TransporterNets first attends to a local region to decide where to pick, 
             then computes a placement location by finding the best match for the picked region by 
-            cross-correlating deep visual features.
+            cross-correlating deep visual features. This structure serves as a powerful inductive bias for learning <a target="_blank" href="https://fabianfuchsml.github.io/equivariance1of2/">roto-translational equivariant</a> representations for efficient imitation learning in tabletop environments.
 
           </p>
         </div>
@@ -500,7 +512,7 @@
         <h3 class="title is-4">Affordance Predictions</h3>
         <div class="content has-text-justified">
           <p>
-            Examples of pick and place affordance predictions from a multi-task <span class="dcliport">CLIPort</span> model:
+            Examples of pick and place affordance predictions from multi-task <span class="dcliport">CLIPort</span> models:
           </p>
         </div>
         <br/>
