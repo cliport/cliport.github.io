@@ -205,14 +205,15 @@
             for vision and language by training on large-scale internet data, however
             these representations lack the spatial understanding necessary for fine-grained
             manipulation. To this end, we propose a framework that combines the best of
-            both worlds: a two-stream architecture with semantic (<b>what</b>) and spatial (<b>where</b>)
+            both worlds: a two-stream architecture with semantic and spatial 
             pathways for vision-based manipulation. Specifically, we present <span class="dcliport">CLIPort</span>, a
             language-conditioned imitation-learning agent that combines the broad semantic
-            understanding of <a target=”_blank” href="https://openai.com/blog/clip/">CLIP</a> with the spatial precision of <a target=”_blank” href="https://transporternets.github.io/">TransporterNets</a>.
+            understanding (<i>what</i> ) of <a target=”_blank” href="https://openai.com/blog/clip/">CLIP</a> with the spatial precision 
+            (<i>where</i> ) of <a target=”_blank” href="https://transporternets.github.io/">TransporterNets</a>.
           </p>
           <p>
             Our end-to-end framework is capable of solving a variety of language-specified tabletop
-            tasks from packing unseen objects to folding cloths, all without any explicit representations 
+            tasks from packing unseen objects to folding cloths, all <b>without any explicit representations</b>
             of object poses, instance segmentations, history, symbolic states, or
             syntactic structures. Experiments in simulation and hardware show that our approach 
             is data-efficient in few-shot settings and generalizes effectively to seen and unseen semantic
