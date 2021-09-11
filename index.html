@@ -183,7 +183,7 @@
 </section>
 <h2 class="subtitle has-text-centered">
 </br>
-  We learn <b>one multi-task policy</b> for 9 real-world tasks including folding, packing, sweeping etc. with just 179 image-action training pairs.
+  We learn <b>one multi-task policy</b> for 9 real-world tasks with just <b>179</b> image-action training pairs.
 </h2>
 
 <section class="section">
@@ -208,15 +208,15 @@
             both worlds: a two-stream architecture with semantic and spatial 
             pathways for vision-based manipulation. Specifically, we present <span class="dcliport">CLIPort</span>, a
             language-conditioned imitation-learning agent that combines the broad semantic
-            understanding (<i>what</i> ) of <a target=”_blank” href="https://openai.com/blog/clip/">CLIP</a> with the spatial precision 
-            (<i>where</i> ) of <a target=”_blank” href="https://transporternets.github.io/">TransporterNets</a>.
+            understanding (<i>what</i>) of <a target=”_blank” href="https://openai.com/blog/clip/">CLIP</a> with the spatial precision 
+            (<i>where</i>) of <a target=”_blank” href="https://transporternets.github.io/">TransporterNets</a>.
           </p>
           <p>
             Our end-to-end framework is capable of solving a variety of language-specified tabletop
             tasks from packing unseen objects to folding cloths, all <b>without any explicit representations</b>
             of object poses, instance segmentations, history, symbolic states, or
             syntactic structures. Experiments in simulation and hardware show that our approach 
-            is data-efficient in few-shot settings and generalizes effectively to seen and unseen semantic
+            is data-efficient and generalizes effectively to seen and unseen semantic
             concepts. We even train <b>one multi-task policy</b> for 10 simulated and 9 real-world
             tasks that shows better or comparable performance to single-task models.
           </p>
@@ -268,6 +268,9 @@
          alt="Interpolate start reference image." />
         <br/>
         <br/>
+            <b>Paradigm 1:</b> Unlike existing object detectors and vision-language models, CLIP is not restricted to a predefined set of classes or a top-down pipeline with bounding boxes and instance segementations. This allows us to forgo the need for training explicit detectors for chessboard squares, cherry stems, and other abitrary objects. 
+        <br/>
+        <br/>
         <br/>
         <!--/ Interpolating. -->
 
@@ -296,6 +299,11 @@
           Credit: <a href="https://transporternets.github.io/">Zeng et. al (Google)</a>
           </p>
         </div>
+        <br/>
+            <b>Paradigm 2:</b> TransporterNets offers an action-centric approach to perception where the objective is to <i>detect actions</i> rather than <i>detect objects</i> and then learn a policy. Keeping the action-space grounded in perception allows us to exploit geometric symmetries for efficient representation learning. 
+            When synergized with CLIP, the combined framework enables the learning of precise manipulation skills without any explicit object representations.
+        <br/>
+        <br/>
         <br/>
 
         <!--/ Re-rendering. -->
