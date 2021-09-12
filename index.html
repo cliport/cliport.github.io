@@ -208,8 +208,8 @@
             both worlds: a two-stream architecture with semantic and spatial 
             pathways for vision-based manipulation. Specifically, we present <span class="dcliport">CLIPort</span>, a
             language-conditioned imitation-learning agent that combines the broad semantic
-            understanding (<i>what</i>) of <a target=”_blank” href="https://openai.com/blog/clip/">CLIP</a> with the spatial precision 
-            (<i>where</i>) of <a target=”_blank” href="https://transporternets.github.io/">TransporterNets</a>.
+            understanding <i>(what)</i> of <a target=”_blank” href="https://openai.com/blog/clip/">CLIP</a> with the spatial precision 
+            <i>(where)</i> of <a target=”_blank” href="https://transporternets.github.io/">TransporterNets</a>.
           </p>
           <p>
             Our end-to-end framework is capable of solving a variety of language-specified tabletop
@@ -268,7 +268,7 @@
          alt="Interpolate start reference image." />
         <br/>
         <br/>
-            <b>Paradigm 1:</b> Unlike existing object detectors, CLIP is not restricted to a predefined set of classes. And unlike other vision-language models, it's not limited to a top-down pipeline with bounding boxes or instance segementations. This allows us to forgo the object-centric paradigm of training explicit detectors for cloths, pliers, chessboard squares, cherry stems, and other arbitrary things. 
+            <b>Paradigm 1:</b> Unlike existing object detectors, CLIP is not limited to a predefined set of classes. And unlike other vision-language models, it's not restricted by a top-down pipeline that locates objects with bounding boxes or instance segementations. This allows us to forgo the object-centric paradigm of training explicit detectors for cloths, pliers, chessboard squares, cherry stems, and other arbitrary things. 
         <br/>
         <br/>
         <br/>
@@ -300,7 +300,7 @@
           </p>
         </div>
         <br/>
-            <b>Paradigm 2:</b> TransporterNets takes an action-centric approach to perception where the objective is to <i>detect actions</i> rather than <i>detect objects</i> and then learn a policy. Keeping the action-space grounded in perception allows us to exploit geometric symmetries for efficient representation learning. 
+            <b>Paradigm 2:</b> TransporterNets takes an action-centric approach to perception where the objective is to <i>detect actions</i> rather than <i>detect objects</i> and then learn a policy. Keeping the action-space grounded in perceptual input allows us to exploit geometric symmetries for efficient representation learning. 
             When synergized with CLIP, the combined framework enables the learning of precise manipulation skills without any "objectness" assumptions.
         <br/>
         <br/>
